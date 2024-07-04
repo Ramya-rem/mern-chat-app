@@ -4,6 +4,7 @@ import authRoutes from "./routes/auth.routes.js";//need to put .js extension oth
 import connectToMongoDB from "./db/connectToMongoDB.js";
 import messageRoutes from "./routes/message.routes.js";
 import userRoutes from "./routes/user.routes.js";
+import path from "path";
 
 import cookieParser from "cookie-parser";
 
@@ -11,6 +12,8 @@ import {app, server} from "./socket/socket.js"
 
 
 const PORT=process.env.PORT || 5000;
+
+const __dirname = path.resolve();//from node js
 
 dotenv.config();
 
@@ -22,8 +25,11 @@ app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
 
+app.use(express.static(path.join(__dirname, "/frontend/dist"))) //it is the middleware(static) use to serve static file like html,css
 
-
+app.get("*", (req, res) => {
+	res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+});
 
 
 // app.get('/',(req,res)=>{
