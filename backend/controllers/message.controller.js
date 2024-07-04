@@ -1,6 +1,6 @@
  import Conversation from "../models/conversation.model.js";
  import Message from "../models/message.model.js";
-// import { getReceiverSocketId, io } from "../socket/socket.js";
+import { getReceiverSocketId, io } from "../socket/socket.js";
 
 export const sendMessage = async (req, res) => {
     // req.params.id mesg sent this id
@@ -31,18 +31,19 @@ export const sendMessage = async (req, res) => {
 		}
          
 		//this 2line coe for saving msgs into data base(in message collection)
-		 await conversation.save();
-		 await newMessage.save();
+		// await conversation.save();
+		// await newMessage.save();
 
 		// this will run in parallel
 		await Promise.all([conversation.save(), newMessage.save()]);
 
 		//SOCKET IO FUNCTIONALITY WILL GO HERE
-		// const receiverSocketId = getReceiverSocketId(receiverId);
-		// if (receiverSocketId) {
-		// 	//io.to(<socket_id>).emit() used to send events to specific client
-		// 	io.to(receiverSocketId).emit("newMessage", newMessage);
-		// }
+		//real time chat
+		 const receiverSocketId = getReceiverSocketId(receiverId);
+		 if (receiverSocketId) {
+		 	//io.to(<socket_id>).emit() used to send events to specific client
+		 	io.to(receiverSocketId).emit("newMessage", newMessage);
+		 }
 
 		res.status(201).json(newMessage);
 	} catch (error) {
