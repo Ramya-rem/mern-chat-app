@@ -24,7 +24,7 @@ const handleSubmit= async (e) => {
 
 };
   return (
-    <div className="flex flex-col items-center justify-center min-w-96 mx-auto">
+    <div className="flex flex-col items-center justify-center w-full max-w-md mx-auto">
       <div className="w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
         <h1 className='text-3xl font-semibold text-center text-gray-300'>
           Sign Up <span className='text-blue-500'> ChatApp</span>
@@ -35,7 +35,7 @@ const handleSubmit= async (e) => {
               <span className="text-base label-text">Full Name</span>
             </label>
             <input type="text" 
-            placeholder="John Doe" 
+            placeholder="Full Name" 
             className="w-full input input-bordered h-10"
             value={inputs.fullName}
             onChange={(e)=> setInputs({...inputs, fullName: e.target.value})}/> {/*we only change the fullname */}
@@ -46,7 +46,7 @@ const handleSubmit= async (e) => {
               <span className="text-base label-text">Username</span>
             </label>
             <input type="text" 
-            placeholder="John Doe" 
+            placeholder="Username" 
             className="w-full input input-bordered h-10"
             value={inputs.username}
             onChange={(e)=>setInputs({...inputs, username:e.target.value})}
