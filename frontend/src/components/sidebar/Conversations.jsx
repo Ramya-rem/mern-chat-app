@@ -8,7 +8,7 @@ const Conversations = () => {
   const{loading, conversations}=useGetConversations();
   console.log("CONVERSATIONS:", conversations);
   return (
-    <div className="py-2 flex flex-col flex-grow overflow-y-auto">
+    <div className="py-2 flex flex-col overflow-auto">
       {conversations.map((conversation, idx)=>(
         <Conversation 
         //this id is unique for each convo
