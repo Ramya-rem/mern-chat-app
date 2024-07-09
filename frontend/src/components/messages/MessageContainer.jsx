@@ -38,7 +38,6 @@ const MessageContainer = () => {
     );
 };
 
-export default MessageContainer;
 
 //no chat selected then this component will shown
 const NoChatSelected = () => {
@@ -53,6 +52,8 @@ const NoChatSelected = () => {
 		</div>
 	);
 };
+
+export default MessageContainer;
 
 
 
