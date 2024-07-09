@@ -15,7 +15,7 @@ const Sidebar = () => {
   );
 }; 
 
-export default Sidebar
+export default Sidebar;
 
 //starter code 
 // import Conversations from "./Conversations"
