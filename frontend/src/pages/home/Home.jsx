@@ -1,13 +1,24 @@
+import { useState } from 'react';
 import MessageContainer from '../../components/messages/MessageContainer';
 import Sidebar from '../../components/sidebar/Sidebar'
+import useConversation from '../../zustand/useConversation';
 
 const Home = () => {
-  return <div className='flex sm:h-[450px] md:h-[550px] rounded-lg overflow-hidden bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0 mt-20'>
+  const { selectedConversation } = useConversation();
+  const [isSidebarVisible, setIsSidebarVisible] = useState(true);
+
+  return (
+  <div className='flex flex-col sm:flex-row sm:h-[450px] md:h-[550px] rounded-lg overflow-hidden bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0 mt-20'>
       {/* sidebar and megcontainer will be flex so sidebar in left side and msgcontainer is on left side  */}
+    <div className={`sm:flex ${selectedConversation ? 'hidden' : 'flex'}`}>
       <Sidebar />
+      </div>
+      <div className={`flex-grow ${selectedConversation ? 'flex' : 'hidden sm:flex'}`}>
       <MessageContainer />
+      </div>
     </div>
+  );
   
-}
+};
 
 export default Home;
