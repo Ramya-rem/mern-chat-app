@@ -17,7 +17,7 @@ const MessageContainer = () => {
         return ()=> setSelectedConversation(null);//default; again opn panna select panna chat kattadhu so using null
     },[setSelectedConversation]);
     return (
-        <div className="md:min-w-[450px] flex flex-col w-full sm:w-full h-full sm:h-full">
+        <div className="md:min-w-[450px] flex flex-col w-full sm:w-full h-full sm:h-full sm:bg-none">
             {!selectedConversation ? ( <NoChatSelected /> ) :(
                 //if doesn't select any chat nochatselected will be shown else below component will be shown
                 <>
