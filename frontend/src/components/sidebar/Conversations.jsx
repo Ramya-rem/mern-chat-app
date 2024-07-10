@@ -1,13 +1,9 @@
-import React from 'react';
 import useGetConversations from "../../hooks/useGetConversations"
 import { getRandomEmoji } from "../../utils/emoji";
 import Conversation from "./Conversation"
 
-
-
-const Conversations = ({ onSelectConversation }) => {
+const Conversations = () => {
   const{loading, conversations}=useGetConversations();
-  console.log("CONVERSATIONS:", conversations);
   return (
     <div className="py-2 flex flex-col overflow-auto">
       {conversations.map((conversation, idx)=>(
@@ -18,15 +14,14 @@ const Conversations = ({ onSelectConversation }) => {
         //inside the utils; returning emojis for each convo
         emoji={getRandomEmoji()}
         lastIdx={idx === conversations.length-1}//length-1 this means this is last index and the reason is that we are using last index, we have the divider each conversation but not the last one so we are not going to show that divider
-        onClick={() => onSelectConversation(conversation)}
         />
       ))}
       {loading ? <span className="loading loading-spinner mx-auto"></span>: null}
 
 
     </div>
-  )
-}
+  );
+};
 
 export default Conversations;
 
