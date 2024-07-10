@@ -1,7 +1,7 @@
-  import useGetConversations from "../../hooks/useGetConversations"
-  import { getRandomEmoji } from "../../utils/emoji";
-  import Conversation from "./Conversation"
-  import React from 'react';
+import React from 'react';
+import useGetConversations from "../../hooks/useGetConversations"
+import { getRandomEmoji } from "../../utils/emoji";
+import Conversation from "./Conversation"
 
 
 

@@ -1,6 +1,7 @@
 import MessageContainer from '../../components/messages/MessageContainer';
 import Sidebar from '../../components/sidebar/Sidebar'
 import { useState } from 'react';
+import '../../index.css';
  
 
 const Home = () => {
