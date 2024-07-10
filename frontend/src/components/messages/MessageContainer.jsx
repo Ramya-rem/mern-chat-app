@@ -15,7 +15,7 @@ const MessageContainer = () => {
         return ()=> setSelectedConversation(null);//default; again opn panna select panna chat kattadhu so using null
     },[setSelectedConversation]);
     return (
-        <div className="flex flex-col md:min-w-[450px] lg:min-w-[500px] xl:min-w-[600px]">
+        <div className="flex flex-col h-full w-full overflow-y-hidden">
             {!selectedConversation ? ( <NoChatSelected /> ) :(
                 //if doesn't select any chat nochatselected will be shown else below component will be shown
                 <>
@@ -25,7 +25,9 @@ const MessageContainer = () => {
                     <span className='text-gray-900 font-bold'>{selectedConversation.fullName}</span>{/* eandha chat select panramo andha username mela kattum */}
                 </div>
                 {/* below the header we have messages */}
+                <div className='flex-grow overflow-y-auto'>
                 <Messages />
+                </div>
               <MessageInput /> 
             </>
             )}
