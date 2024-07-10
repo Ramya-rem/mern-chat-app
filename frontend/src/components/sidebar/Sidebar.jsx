@@ -14,7 +14,7 @@ const Sidebar = ({ isVisible, onConversationSelect }) => {
     }`}>
       <SearchInput />
       <div className="divider px-3"></div>
-    <Conversations conversations={/* ... */} onClick={handleConversationClick} /> {/* Pass onClick handler to Conversations */}
+    <Conversations onClick={handleConversationClick} /> {/* Pass onClick handler to Conversations */}
     <LogoutButton />
     </div>
 
