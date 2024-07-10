@@ -63,30 +63,3 @@ body {
 }
 
 
-/* Media queries for responsiveness */
-@media (min-width: 640px) {
-	.container {
-	  @apply flex-row h-112;
-	}
-  }
-  
-  @media (min-width: 768px) {
-	.container {
-	  @apply h-137;
-	}
-  }
-  
-  @media (max-width: 639px) {
-	.container {
-	  @apply flex-col h-auto;
-	}
-	.sidebar-hidden {
-	  @apply hidden;
-	}
-	.message-container-hidden {
-	  @apply hidden;
-	}
-	.message-container-visible {
-	  @apply block;
-	}
-  }
