@@ -5,7 +5,7 @@ import Conversation from "./Conversation"
 const Conversations = () => {
   const{loading, conversations}=useGetConversations();
   return (
-    <div className="py-2 flex flex-col overflow-auto">
+    <div className="py-2 flex flex-col overflow-y-auto">
       {conversations.map((conversation, idx)=>(
         <Conversation 
         //this id is unique for each convo
@@ -17,9 +17,7 @@ const Conversations = () => {
         />
       ))}
       {loading ? <span className="loading loading-spinner mx-auto"></span>: null}
-
-
-    </div>
+     </div>
   );
 };
 
