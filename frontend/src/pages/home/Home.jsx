@@ -1,6 +1,6 @@
 import MessageContainer from '../../components/messages/MessageContainer';
 import Sidebar from '../../components/sidebar/Sidebar'
-import { useState } from 'react';
+import React, { useState } from 'react';
 import '../../index.css';
  
 
@@ -19,7 +19,7 @@ const Home = () => {
   <div className={`container flex ${isSidebarVisible ? '' : 'flex-col'}`} >
       {/* sidebar and megcontainer will be flex so sidebar in left side and msgcontainer is on left side  */}
       <div className={isSidebarVisible ? '' : 'sidebar-hidden'}>
-        <Sidebar />
+        <Sidebar onSelectConversation={handleSelectConversation}/>
         </div>
         <div className={isSidebarVisible ? 'message-container-hidden' : 'message-container-visible'}>
       <MessageContainer onBack={handleBackToSidebar}/>
