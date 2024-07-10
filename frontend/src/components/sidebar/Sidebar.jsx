@@ -1,15 +1,16 @@
+import React from 'react';
 import Conversations from "./Conversations"
 import LogoutButton from "./LogoutButton"
 import SearchInput from "./SearchInput"
 
 
-const Sidebar = () => {
+const Sidebar = ({ onSelectConversation }) => {
   
   return (
-    <div  className='border-r border-slate-500 p-4 flex flex-col'>
+    <div  className='border-r border-gray-600 p-4 flex flex-col'>
       <SearchInput />
       <div className="divider px-3"></div>
-    <Conversations />
+    <Conversations onSelectConversation={onSelectConversation}/>
     <LogoutButton />
     </div>
 

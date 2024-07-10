@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import useConversation from "../../zustand/useConversation";
 import MessageInput from "./MessageInput";
 import Messages from "./Messages"
@@ -20,7 +20,8 @@ const MessageContainer = () => {
                 //if doesn't select any chat nochatselected will be shown else below component will be shown
                 <>
                 {/* Header */}
-                <div className='bg-slate-500 px-4 py-2 mb-2'>
+                <div className='bg-gray-500 px-4 py-2 mb-2 flex items-center justify-between'>
+                    <button onClick={onBack} className="text-white">Back</button>
                     <span className='label-text'>To:</span> {/*{" "} */}
                     <span className='text-gray-900 font-bold'>{selectedConversation.fullName}</span>{/* eandha chat select panramo andha username mela kattum */}
                 </div>
