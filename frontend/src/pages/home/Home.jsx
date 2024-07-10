@@ -11,7 +11,7 @@ const Home = () => {
       <div className={`sm:flex ${selectedConversation ? 'hidden' : 'flex'} w-full sm:w-auto`}>
         <Sidebar />
         </div>
-        <div className={`flex-grow ${selectedConversation ? 'flex' : 'hidden sm:flex sm:w-full'}`}>
+        <div className={`flex-grow ${selectedConversation ? 'flex' : 'hidden sm:flex'}`}>
       <MessageContainer />
       </div>
       </div>
