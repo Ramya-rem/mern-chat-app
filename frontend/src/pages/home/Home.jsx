@@ -8,7 +8,7 @@ const Home = () => {
   return (
   <div className='flex flex-col sm:flex-row h-screen overflow-hidden' >
       {/* sidebar and megcontainer will be flex so sidebar in left side and msgcontainer is on left side  */}
-      <div className={`sm:flex ${selectedConversation ? 'hidden' : 'flex'} w-full sm:w-auto sm:flex-grow-0 h-full`}>
+      <div className={`flex ${selectedConversation ? 'hidden' : 'flex'} w-full sm:w-auto sm:flex-grow-0 h-full`}>
         <Sidebar />
         </div>
         <div className={`flex-grow ${selectedConversation ? 'flex' : 'hidden sm:flex'} h-full`}>
