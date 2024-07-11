@@ -8,6 +8,7 @@ export default {
     extend: {
       height: {
         'screen': '100vh',
+        'full':'100%,',
       }
     },
   },
