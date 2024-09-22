@@ -20,7 +20,7 @@ dotenv.config();
 //middleware
 app.use(express.json());//to parse tha incoming req with json payloads (from req body)
 app.use(cookieParser());
-
+//Routes Setup:
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
